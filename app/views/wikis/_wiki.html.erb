@@ -1,7 +1,7 @@
 <%unless wiki.id.nil?%>
       <tr>   
         <td>
-          <p><%= link_to wiki.title, wiki_path(wiki.id) %></p>
+          <p><%= link_to wiki.title, wiki_path(wiki) %></p>
         </td>
         <td>
           <%= link_to "Edit", edit_wiki_path(wiki.id) %>

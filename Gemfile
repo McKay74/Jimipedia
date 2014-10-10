@@ -17,6 +17,9 @@ gem 'bootstrap-sass', '~> 3.1.1'
 
 gem 'devise'
 gem 'faker'
+gem 'pundit'
+
+gem 'friendly_id', '~> 5.0.0'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -50,4 +53,4 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+gem 'redcarpet', '~> 2.3.0'

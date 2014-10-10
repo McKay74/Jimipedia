@@ -9,6 +9,7 @@
       </ul>
     </div>
     <% end %>
+
     <p>
       <%= f.label :title %><br>
       <%= f.text_field :title %>
@@ -18,6 +19,13 @@
       <%= f.label :body %><br>
       <%= f.text_area :body %>
     </p>
+
+    <% if current_user.is_premium? %>
+      <p>
+        <%= check_box_tag(:private, value: true) %>
+        <%= label_tag(:private, "Make this Wiki private") %>
+      </p>
+    <% end %>
 
     <p>
       <%= f.submit %>
