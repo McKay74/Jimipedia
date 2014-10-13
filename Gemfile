@@ -18,6 +18,8 @@ gem 'bootstrap-sass', '~> 3.1.1'
 gem 'devise'
 gem 'faker'
 gem 'pundit'
+gem 'stripe'
+gem 'figaro', '1.0'
 
 gem 'friendly_id', '~> 5.0.0'
 

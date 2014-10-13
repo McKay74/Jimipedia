@@ -1,7 +1,8 @@
 class WikisController < ApplicationController
   before_filter :authenticate_user! , except: [:index, :show]
   def index
-    @wikis = Wiki.all 
+    @wikis = Wiki.all
+    authorize @wikis
   end
 
   def show
@@ -20,6 +21,7 @@ class WikisController < ApplicationController
 
   def new
     @wiki = Wiki.new
+    authorize @wiki
   end
 
   def edit

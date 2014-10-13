@@ -20,10 +20,10 @@
       <%= f.text_area :body %>
     </p>
 
-    <% if current_user.is_premium? %>
+    <% if policy(@wiki).new? %>
       <p>
         <%= check_box_tag(:private, value: true) %>
-        <%= label_tag(:private, "Make this Wiki private") %>
+        <%= label_tag(:private, "Make this Wiki private", value: true) %>
       </p>
     <% end %>
 
