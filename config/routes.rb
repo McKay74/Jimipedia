@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'collaborators/new'
+
+  get 'collaborators/show'
+
   get 'users/wikis'
 
   resources :wikis

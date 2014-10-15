@@ -25,6 +25,11 @@
         <%= f.check_box :private %>
         <%= label_tag(:private, "Make this Wiki private") %>
       </p>
+
+      <p>
+        <strong>Add collaborators:</strong><br/>
+       <%= f.collection_select(:user_id, User.all, :id, :name, {}, {:multiple => true}) %>
+      </p>
     <% end %>
 
     <p>

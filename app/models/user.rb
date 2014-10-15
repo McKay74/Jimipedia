@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :wikis
+  has_many :collaborators
+  has_many :wikis, through: :collaborators
 
   def set_default_role
     self.role ||= "user"
