@@ -13,8 +13,13 @@ class ChargesController < ApplicationController
     currency: 'usd'
   )
 
-  flash[:success] = "Thanks for purchasing a premium membership #{current_user.email}!"
-  redirect_to user_path(current_user)
+  if current_user.update_attribute(:role, "premium") 
+    flash[:success] = "Thanks for purchasing a premium membership #{current_user.email}!"
+    redirect_to user_path(current_user)
+  else
+    flash[:success] = "Something went wrong"
+    redirect_to user_path(current_user)
+  end
 
 
 rescue Stripe::CardError => e 
