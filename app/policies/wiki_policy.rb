@@ -20,6 +20,10 @@ class WikiPolicy < ApplicationPolicy
     true
   end
 
+  def show?
+    user.role == "premium" || record.collaborators.pluck(:user_id).include?(user.id)
+  end
+
   def private?
    user.role == "premium"
   end

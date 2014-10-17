@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   resources :charges, only: [:new, :create]
-
+  resources :collaborators, only: [:create]
 end
 
