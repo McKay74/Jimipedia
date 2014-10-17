@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'collaborators/new'
+
+  get 'collaborators/show'
+
   get 'users/wikis'
 
   resources :wikis
@@ -8,6 +12,6 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   resources :charges, only: [:new, :create]
-
+  resources :collaborators, only: [:create]
 end
 

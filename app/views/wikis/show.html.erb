@@ -1,4 +1,13 @@
 <h1><%= @wiki.title %></h1>
 <p><%= markdown_render(@wiki.body).html_safe %></p>
 
+    <p>
+      <%= form_for Collaborator.new do |f| %>
+      <%= f.hidden_field :wiki_id, value: @wiki.id %>
+       <strong>Add collaborators:</strong><br/>
+       <%= f.collection_select(:user_ids, User.all, :id, :name, {}, {:multiple => true}) %>
+       <%= f.submit "Add collaborators" %>
+       <% end %>
+     </p>
+
 <%= link_to 'Back', wikis_path %>
